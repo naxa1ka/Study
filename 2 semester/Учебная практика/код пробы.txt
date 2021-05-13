@@ -1,0 +1,128 @@
+void Res(double** ARRAY, double* res, int N, int M) {
+	for (int i = 0; i < N; i++) {
+		res[i] = ARRAY[i][M-1] / ARRAY[i][i];
+		cout << ARRAY[i][M-1] << "  " << ARRAY[i][i];
+		cout << endl;
+	}
+}
+
+ /*
+тсмйжхъ дкъ оепеярюмнбйх ярнкажнб
+бундмше оюпюлерпш:
+   ARRAY - люрпхжю я йнрнпни пюанрюел
+   indexmax - мюидеммши ярнкаеж я люйя. щкелемрнл
+   num - ярнкаеж я йнрнпшл асдел лемърэ
+   N - пюглеп ярнкажнб
+бшундмше оюпюлерпш:
+	мхвецньемэйх, онлемъкх х убюрхр
+ */
+ void SwapCols(double** ARRAY, int *VecX, int indexmax, int num, int M) {
+	 double temp;
+	 for (int i = num; i < M; i++) {
+		 temp = ARRAY[i][indexmax];
+		 ARRAY[i][indexmax] = ARRAY[i][num];
+		 ARRAY[i][num] = temp;	
+
+		 temp = VecX[indexmax];
+		 VecX[indexmax] = VecX[num];
+		 VecX[num] = temp;
+	 }
+	 cout << endl << "ЛЕМЪЕЛ " << indexmax + 1 << " Х " << num + 1 << " cРНКАЖШ";
+ }
+ //++
+
+ /*
+тсмйжхъ дкъ оепеярюмнбйх ярпнй
+бундмше оюпюлерпш:
+   ARRAY - люрпхжю я йнрнпни пюанрюел
+   indexmax - мюидеммши ярнкаеж я люйя. щкелемрнл
+   num - ярнкаеж я йнрнпшл асдел лемърэ
+   N - пюглеп ярпнйх
+бшундмше оюпюлерпш:
+	мхвецньемэйх, онлемъкх х убюрхр
+ */
+ void SwapRows(double** ARRAY, int *VecX, int indexmax, int num, int N) {
+	 double temp;
+	 for (int i = num; i < N; i++) {
+		 temp = ARRAY[indexmax][i];
+		 ARRAY[indexmax][i] = ARRAY[num][i];
+		 ARRAY[num][i] = temp;
+	 }
+	 cout << endl << "ЛЕМЪЕЛ " << indexmax + 1 << " Х " << num + 1 << " ЯРПНВЙХ";
+ }
+ //++
+
+/*
+тсмйжхъ дкъ онхяйю люйяхлслю мю оепеяевемхх ярпнй х ярнкажнб (i==j)
+бундмше оюпюлерпш:
+	ARRAY - люрпхжю я йнрнпни пюанрюел
+	NUM - мнлеп дхюцнмюкх мю йнрнпни пюанрюел
+	N - пюглеп ярнкажнб
+	M - пюглеп ярпнй
+бнгпюыюелше оюпюлерпш:
+	осярнрю - лемъел ярпнйх/ярнкажш
+*/
+ void SwapMaxRowsCols(double** ARRAY, int *VecX, int num, int N, int M) {
+	 double max = 0;
+	 int indexmax = 0;
+	 for (int i = 0; i < M - 1; i++) {		//-1 Р.Й. МЕ ГЮАШБЮЕЛ ОПН ЯБНАНДМШЕ ВКЕМШ
+		 if (ARRAY[num][i] > max) {		//ОНОЮДЮЕЛ Б ЯРНКАЕЖ num Х ХДЕЛ ОН ЯРПНЙЕ
+			 max = ARRAY[num][i];
+			 indexmax = i;
+		 }
+	 }
+		 bool flag = false;						//ДЕКЮЕЛ ТКЮЦ ВРНАШ ГМЮРЭ ЯРПНЙЮ/ЯРНКАЕЖ
+
+	 for (int i = 0; i < N; i++) {
+		if (ARRAY[i][num] > max) {		//ХДЕЛ ОН БЯЕЛ ЯРНКАЖЮЛ 
+			max = ARRAY[i][num];		//ОНОЮДЮИ Б num ЯРПНЙС
+			indexmax = i;						//ХЫЕЛ ЛЮЙЯХЛСЛ
+			flag = true;						//Б ЯРНКАЖЕ АнКЭЬХИ ЩКЕЛЕМР
+		}
+	 }
+		 if (flag == false) {					//ЛЮЙЯХЛСЛ Б ЯРПНЙЕ
+			 SwapCols(ARRAY, VecX, indexmax, num, N);	//ЛЕМЪЕЛ num ЯРНКАЕЖ Я ЛЮЙЯХЛЮКЭМШЛ ЯРНКАЖНЛ 
+		 }
+		 else {									//ЛЮЙЯХЛСЛ Б ЯРПНВЙЕ
+			 SwapRows(ARRAY, VecX, indexmax, num, M);	//ЛЕМЪЕЛ num ЯРПНЙС Я ЛЮЙЯХЛЮКЭМНИ ЯРПНЙНИ 
+		 }
+	 }
+ //++
+
+ /*
+тсмйжхъ дхюцнмюкэмнцн опенакюдюмхъ щкелемрнб люрпхжш
+бундмше оюпюлерпш:
+	ARRAY - люяяхб я йнрнпшл пюанрюел
+	N - пюглеп ярнкажнб
+	M - пюглеп ярпнй
+бшундмше оюпюлерпш:
+	осярнрю - бшгшбюел тсмйжхх дюкэье
+*/
+ void DominateDiagonal(double** ARRAY, int *VecX,int SIZE) {
+	 for (int i = 0; i < 2; i++) {
+		 if (fabs(SumLine(ARRAY, SIZE, i) - *(*(ARRAY + i) + i)) > fabs(*(*(ARRAY + i) + i))) {
+			 SwapMaxRowsCols(ARRAY, VecX, i, SIZE, SIZE);
+			 PrintArray(ARRAY, SIZE);
+		 }
+	 }
+
+ }
+
+ //++
+ void MinMaxRows(double** ARRAY, int N, int M) {
+	 for (int i = 0; i < N; i++) {
+		 if (fabs(SumLine(ARRAY, M, i) - *(*(ARRAY + i) + i)) > fabs(*(*(ARRAY + i) + i))) {
+
+		 }
+	 }
+ }
+ void CheckDominate(double** ARRAY, int N, int M) {
+	 for (int i = 0; i < N; i++) {
+		 if (fabs(SumLine(ARRAY, M, i) - *(*(ARRAY + i) + i)) < fabs(*(*(ARRAY + i) + i))) { //ЕЯКХ МЕ ОПЕНАКЮДЮМХЕ РН...
+			 cout << "true" << i << " ";
+		 }
+		 else {
+			 cout << "false" << i << " ";
+		 }
+	 }
+ }

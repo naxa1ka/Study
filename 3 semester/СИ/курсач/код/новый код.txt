@@ -1,0 +1,313 @@
+#include <math.h>
+#include <stdio.h>
+#include <graphics.h>
+
+double f(int n) {
+    return pow(1 + 1.0 / n, n);
+}
+
+int countN(double eps) {
+    int n = 1;
+    double y;
+
+    do {
+        y = f(n);
+        n++;
+    } while (fabs(exp(1) - y) > eps);
+
+    return n;
+}
+
+double lim(int n) {
+    int counter = 1;
+    double y;
+
+    while (counter <= n) {
+        y = f(n);
+        counter++;
+    }
+
+    return y;
+}
+
+double recLim(int counter, int n) {
+    double y;
+
+    y = f(n);
+    if (counter > n)
+        y = recLim(counter, n + 1);
+
+    return y;
+}
+
+void writingToFile(int steps, double eps) {
+    FILE *output;
+    output = fopen("output.txt", "w");
+
+    int n = 1; //текущая итерация
+    double limY; //значение текущего нереккуретного члена последовательности
+    double recLimY; //значение текущего реккуретного члена последовательности
+    double maxN;
+    int coef;
+
+    fprintf(output, "%9s %12s %12s\n", "n", "lim", "recLim");
+
+    maxN = countN(eps) - 1;
+    coef = maxN / steps;
+
+    do {
+        if (n == maxN || n % coef == 0 || n == 1) {
+            limY = lim(n);
+            recLimY = recLim(n, 1);
+            fprintf(output, "%9d %12.8f %12.8f\n", n, limY, recLimY);
+        }
+        n++;
+    } while ((fabs(exp(1) - limY) > eps) && (fabs(exp(1) - recLimY) > eps));
+
+    fprintf(output, "Exact value e : %12.8f\n", exp(1));
+
+    fclose(output);
+}
+
+void binaryWritingToFile(int steps, double eps) {
+    FILE *output;
+    output = fopen("bin.bin", "w+b");
+
+    double n = 1; //текущая итерация
+    double limY; //значение текущего нереккуретного члена последовательности
+    double recLimY; //значение текущего реккуретного члена последовательности
+    double maxN;
+    int coef;
+
+    maxN = countN(eps) - 1;
+    coef = maxN / steps;
+
+    do {
+        if (n == maxN || (int) n % coef == 0 || n == 1) {
+            limY = lim(n);
+            recLimY = recLim(n, 1);
+            fwrite(&n, sizeof(double), 1, output);
+            fwrite(&limY, sizeof(double), 1, output);
+            fwrite(&recLimY, sizeof(double), 1, output);
+        }
+        n++;
+    } while ((fabs(exp(1) - limY) > eps) && (fabs(exp(1) - recLimY) > eps));
+
+    fclose(output);
+}
+
+int sizeOfFile(char *filename) {
+    FILE *in;
+
+    if ((in = fopen(filename, "rb")) == NULL) {
+        printf("Error! File is empty!");
+        return -1;
+    }
+
+    fseek(in, 0, SEEK_END); //смещение указателя чтения на конец файла
+
+    return ftell(in);
+}
+
+void table(int steps, double eps) {
+    int n = 1; //текущая итерация
+    int maxN;
+    double limY; //значение текущего нереккуретного члена последовательности
+    double recLimY; //значение текущего реккуретного члена последовательности
+    int coef;
+
+    maxN = countN(eps) - 1;
+
+    printf("---------------------------------------\n");
+    printf("|  Computations require %d steps   |\n", maxN);
+    printf("---------------------------------------\n");
+    printf("|%6s |%13s |%13s |\n", "n", "lim", "recLim");
+    // printf("|   n   |      lim     |     recLim   |\n");
+
+    coef = maxN / steps;
+
+    do {
+        if (n == maxN || n % coef == 0 || n == 1) {
+            limY = lim(n);
+            recLimY = recLim(n, 1);
+            printf("---------------------------------------\n");
+            printf("| %5d | %12.8f | %12.8f |\n", n, limY, recLimY);
+        }
+        n++;
+    } while ((fabs(exp(1) - limY) > eps) && (fabs(exp(1) - recLimY) > eps));
+
+
+    printf("---------------------------------------\n");
+    printf("|         eps:       %12.8f     |\n", eps);
+    printf("---------------------------------------\n");
+    printf("|   Exact value e:   %12.8f     |\n", exp(1));
+    printf("---------------------------------------\n\n");
+}
+
+void graph(double n) {
+    int height; //высота окна
+    int width; //ширина окна
+
+    int numberSplitsX; //количество разбиений по оси X
+    int numberSplitsY; //количество разбиений по оси Y
+
+    double dy; //приращение для разбиения оси Y
+
+    double coefx; //коэффицент масштабирования по оси X
+    double coefy; //коэффицент масштабирования по оси Y
+
+    char temp[4]; //буффер для вывода текста на экран
+    double buff; //буффер для вычислений
+
+    int i; //итератор по циклу
+
+    double y; //значение функции
+
+    height = 750; //высота окна
+    width = 750; //ширина окна
+
+    initwindow(width, height); //инициализируем размеры окна
+    line(0, height - 25, width - 10, height - 25); //рисуем ось X
+    line(25, 10, 25, height); //рисуем ось Y
+
+    line(20, 15, 25, 10);
+    line(30, 15, 25, 10); //стрелка у оси Y
+    line(width - 15, height - 30, width - 10, height - 25);
+    line(width - 15, height - 20, width - 10, height - 25); //стрелка у оси X
+
+    outtextxy(35, 7, "Y");
+    outtextxy(width - 17, height - 50, "X"); //подписи у осей X и Y
+    settextstyle(SMALL_FONT, HORIZ_DIR, 0); //стиль текста
+
+//вывод масштаба у оси X
+    numberSplitsX = 11;
+    for (i = 0; i <= numberSplitsX; i++) {
+        buff = n / numberSplitsX * i;
+        sprintf(temp, "%1.f", buff);
+        line((width - 50) / numberSplitsX * i + 25, height - 20, (width - 50) / numberSplitsX * i + 25, height - 30);
+        outtextxy((width - 50) / numberSplitsX * i + 22, height - 15, temp);
+    }
+
+//вывод масштаба у оси Y
+    numberSplitsY = 20;
+    for (i = 0; i <= numberSplitsY; i++) {
+        dy = 0.75 / numberSplitsY;
+        buff = 2.75 - dy * i;
+        sprintf(temp, "%1.2f", buff);
+        outtextxy(3, ((width - 50) / numberSplitsY * i + 21), temp);
+        line(20, ((width - 50) / numberSplitsY * i + 25), 30, ((width - 50) / numberSplitsY * i + 25));
+    }
+
+    coefx = (width - 25) / n; //вычисляем коэффицент масштабирования по оси X
+    coefy = (height - 25) / 2.75; //вычисляем коэффицент масштабирования по оси Y
+
+    moveto(25, height - 25);//переносим перо в нулевые координаты
+
+    setcolor(12);
+    line(25, (height + 25) - coefy * exp(1), coefx * n + 25, (height + 25) - coefy * exp(1));
+    settextstyle(0, HORIZ_DIR, 0); //стиль текста
+    outtextxy(35, (height + 5) - coefy * exp(1), "E");
+
+    //строим график
+    setcolor(15);
+    i = 0;
+
+    while (i < n) {
+        y = f(i);
+        lineto(coefx * i + 25, (height + 25) - coefy * y);
+        i++;
+    }
+
+    getch();
+    closegraph();
+}
+
+void fromBinary() {
+    FILE *output;
+    FILE *input;
+
+    input = fopen("bin.bin", "rb");
+    output = fopen("fromBinary.txt", "w");
+
+    double check = 0;
+
+    int counter = 1;
+
+    printf("-------------------------------------\n");
+    fprintf(output, "%6s %12s %12s\n", "n", "lim", "recLim");
+    printf("|%6s |%12s |%12s |\n", "n", "lim", "recLim");
+    printf("-------------------------------------\n");
+
+    while (fread(&check, 1, sizeof(double), input) != 0) {
+
+        if (counter % 3 == 1) {
+            printf("|%6.0f |", check);
+            fprintf(output, "%6.0f ", check);
+        } else {
+            printf("%12.8f |", check);
+            fprintf(output, "%12.8f ", check);
+        }
+
+        if (counter % 3 == 0) {
+            printf("\n-------------------------------------\n");
+            fprintf(output, "\n");
+        }
+        counter++;
+    }
+    fclose(output);
+    fclose(input);
+
+}
+
+int main() {
+    double eps = 0.0001;
+    int choose = -1;
+    int steps = 40;
+    int buff;
+    while (choose) {
+        printf("1.Table\n2.Graph\n3.Write to file\n4.Size of files\n5.Check binary file\n0.Exit\n",
+               eps);
+        scanf("%i", &choose);
+        printf("\n");
+        switch (choose) {
+            case 0:
+                break;
+            case 1:
+                table(steps, eps);
+                break;
+            case 2:
+                printf("1.Graph through eps\n2.Graph through steps\n");
+                scanf("%i", &choose);
+                switch (choose) {
+                    case 1:
+                        graph(countN(eps));
+                        break;
+                    case 2:
+                        printf("Enter the number of steps: \n");
+                        scanf("%i", &buff);
+                        graph(buff);
+                        break;
+                }
+                printf("Graph built! Press any button to close\n\n");
+                break;
+            case 3:
+                writingToFile(steps, eps);
+                binaryWritingToFile(steps, eps);
+                printf("The recording is over!\n\n");
+                break;
+            case 4:
+                printf("Size of output file: %d \n", sizeOfFile("output.txt"));
+                printf("Size of binary file: %d \n\n", sizeOfFile("bin.bin"));
+                break;
+            case 5:
+                fromBinary();
+                printf("\n");
+                break;
+            default:
+                printf("Error! Repeat please!\n\n");
+                break;
+        }
+    }
+
+    return 0;
+}

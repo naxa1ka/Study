@@ -1,0 +1,86 @@
+using namespace std;
+#include <iostream>
+#include <vector>
+#include <fstream>
+
+int main()
+{
+	system("color F0");
+	setlocale(LC_ALL, "Russian");
+	int SIZE; // размерность массива
+	int Diff; // минимальная разность
+	ifstream fin; //создать объект класса fin
+	fin.open("Text1.txt"); // начинаем чтение файла 
+
+	if (!fin) // если файл не найден
+	{
+		cout << "Ошибка! файл не найден" << endl;
+		system("pause");
+		return 1;
+	}
+
+	if (fin.peek() == EOF) //если найденный файл пуст
+	{
+		cout << "Ошибка! файл пуст!" << endl;
+		system("pause");
+		return 1;
+	}
+
+	fin >> SIZE;
+
+	vector <int> AVec(SIZE); //объявление AVec
+	int CntVec = 0;
+		
+	while (!fin.eof()) //чтение элементов массива, пока элементы не закончатся
+	{
+		if (fin.fail()) { //проверка на ввод цифр
+			cout << "Ошибка! Допустим ввод только цифр!" << endl;
+			system("pause");
+			return 1;
+		}
+		if (CntVec >= SIZE) { //проверка на выход за границы массива
+			cout << "Ошибка! Количество входных элементов больше входного массива!" << endl;
+			system("pause");
+			return 1;
+		}
+		fin >> AVec[CntVec]; //чтение массива из файла
+		CntVec++; //подсчет количества элементов массив
+	}
+
+	fin.close(); //закрыть файл
+
+	if (CntVec < 2) { //проверка на количество входных элементов
+		cout << "Ошибка! Количество входных элементов должно быть больше 2!" << endl;
+		system("pause");
+		return 1;
+	}
+
+	cout << "Введенный массив:\n";
+	for (int i = 0; i < CntVec; i++) { //вывод изначального массива
+		cout << "AVec[" << i << "]: " << AVec[i] << "\n";
+	}
+
+	cout << endl;
+	Diff = abs(AVec[0] - AVec[1]);
+
+	for (int i = 0; i < CntVec - 1; i++) { //поиск значения минимальной разницы
+		for (int j = i + 1; j < CntVec; j++) {
+			if (abs(AVec[i] - AVec[j]) < Diff) {
+				Diff = abs(AVec[i] - AVec[j]);
+			}
+		}
+	}
+
+	cout << "Минимальный модуль разницы двух элементов в массиве: \n";
+
+	for (int i = 0; i < CntVec - 1; i++) { //поиск всех одинаковых разниц
+		for (int j = i + 1; j < CntVec; j++) {
+			if (abs(AVec[i] - AVec[j]) == Diff) {
+				cout << "|AVec[" << i << "] - AVec[" << j << "]| = " << Diff << endl;
+				cout << "|" << AVec[i] << " - " << AVec[j] << "| = " << Diff << endl << endl;
+			}
+		}
+	}
+	system("pause");
+	return 0;
+}

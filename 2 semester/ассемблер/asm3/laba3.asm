@@ -1,0 +1,61 @@
+org 100h
+
+mov ax, [c] ; ax = c
+not ax      ; ax = NOT(c)
+mov bx, [d] ; bx = d     
+or  ax, bx  ; ax = ax OR bx = d OR NOT(C)
+
+mov bx, [a] ; bx = a
+and bx, ax  ; bx = bx AND ax = a AND (d OR NOT(c))
+
+mov ax, [b] ; ax = b
+not ax      ; ax = NOT(b)
+or  bx,ax   ; bx = bx OR ax = a AND (d OR NOT(c)) OR NOT(b)
+
+mov ax, [c] ; ax = c
+
+and ax,bx   ; ax = ax AND bx = a AND (d OR NOT(c)) OR NOT(b) AND c
+
+call print
+ret
+
+print proc
+    mov cx, 16 
+cycle:
+    xor dx,dx  ;clear trash
+    div cx     ;ax - ostatok,  dx - chastnoe 
+    mov bx,dx  ;bx = dx
+    xchg ax,dx ;dx - ostatok,  ax - chastnoe 
+    cmp dx, 9  
+    jg hex 
+    add dx, 30h 
+    jmp next
+hex:
+    add dx, 37h
+next: 
+    mov ah, 2h ;vivod
+    int 21h    ;vivod
+ 
+    cmp bx, 16
+    jge cycle
+    
+    cmp bx, 9
+    xchg bx,dx
+    jg hex2
+    add dx, 30h
+    jmp next2
+hex2:
+    add dx, 37h 
+next2:
+    mov ah, 2h
+    int 21h
+    ; wait for any key press:
+    mov ah, 0
+    int 16h
+    ret
+print endp
+
+a dw 00001001b  ; 9 in decimal
+b dw 00010010b  ; 18 in decimal
+c dw 11101000b  ; -24 in decimal
+d dw 00101100b  ; 44 in decimal

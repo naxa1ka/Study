@@ -1,0 +1,4 @@
+﻿  praktika2.cpp
+C:\Users\Дарья\source\repos\praktika2\praktika2\praktika2.cpp(242,10): warning C4553: "==": результат выражения не используется; вы хотели использовать "="?
+C:\Users\Дарья\source\repos\praktika2\praktika2\praktika2.cpp(267,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  praktika2.vcxproj -> C:\Users\Дарья\source\repos\praktika2\Debug\praktika2.exe

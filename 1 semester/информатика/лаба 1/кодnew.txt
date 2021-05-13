@@ -1,0 +1,101 @@
+#include <string>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	system("color F0");
+	setlocale(LC_ALL,"Russian");
+	ifstream fin;
+	fin.open("Test.txt");
+	if (!fin) // если файл не найден
+	{
+		cout << "Ошибка! файл не найден" << endl; //вывод сообщения об ошибки
+		fin.close(); //закрыть файл
+		system("pause");
+		return 1;
+	}
+
+	if (fin.peek() == EOF) //если найденный файл пуст
+	{
+		cout << "Ошибка! файл пуст!" << endl;// вывод сообщения об ошибке
+		fin.close();//закрыть файл
+		system("pause");
+		return 1;
+	}
+	string str; // объявление строки
+	getline(fin, str); // считываем строку
+	fin.close(); // закрыт считывание
+	cout << "Изначальная строка: " << str << endl;
+	int i = 0;
+	int IndexFirstSymbol;
+	int IndexLastSymbol;
+	int MaxLenghtWord = 0;
+	bool flag = 0;
+
+	//поиск самого длинного слова 
+	while (str[i]) {
+		//найти первый символ слова
+		while ((str[i] == ' ') && (str[i] != '\0')) {
+			i++;
+		}
+		IndexFirstSymbol = i;
+		//найти последний символ слова
+
+		while ((str[i] != ' ') && (str[i] != '\0')) {
+			if ((flag == 1) && !((str[i] >= '0') && (str[i] <= '9'))) { //если после цифры идет не цифра выходим
+				cout << "Error!";
+				return 1;
+			}
+			if ((str[i] >= '0') && (str[i] <= '9')) { //если находим цифру
+			flag = 1;
+			}		
+			
+			if (!( ((str[i] >= 'a') && (str[i] <= 'z')) //проверка на корректность ввода
+				|| ((str[i] >= 'A') && (str[i] <= 'Z')) 
+				|| ((str[i] >= '0') && (str[i] <= '9')
+				))) {
+				cout << "Error!";
+				return 1;
+			}
+			i++;
+		}
+		flag = 0; //обнулем флаг, т.к новое слово
+		IndexLastSymbol = i; // сохраняем индекс последнего символа слова
+		//найти максимальную длину слова
+		if ((IndexLastSymbol - IndexFirstSymbol) > MaxLenghtWord) { //поиск макс длины слова
+			MaxLenghtWord = IndexLastSymbol - IndexFirstSymbol;
+		}
+	}
+	cout << "Максимальная длина слова: " << MaxLenghtWord << endl;
+
+	i = 0; //возвращаемся на начало строчки
+
+	cout << "Слова с длиной '" << MaxLenghtWord << "':" << endl;
+	//поиск слов с аналогичной длиной
+	while (str[i]) {
+		//найти первый символ слова
+		while ((str[i] == ' ') && (str[i] != '\0')) {
+			i++;
+		}
+		IndexFirstSymbol = i;
+		//найти последний символ слова	
+		while ((str[i] != ' ') && (str[i] != '\0')) {
+			i++;
+		}
+		IndexLastSymbol = i;
+		//проверка на длину слова
+		if (IndexLastSymbol - IndexFirstSymbol == MaxLenghtWord) {
+			for (int i = IndexFirstSymbol; i < IndexLastSymbol; i++) {
+				cout << str[i];
+			}
+			cout << " ";
+		}
+	}
+	cout << endl;
+	
+	
+	return 0;
+}
+

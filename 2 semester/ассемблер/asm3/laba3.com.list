@@ -1,0 +1,81 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+laba3.com -- emu8086 assembler version: 4.08  
+ 
+[ 01.05.2020  --  12:11:55 ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       org 100h
+[   2]        :                                       
+[   3]    0100: A1 5D 01                              mov ax, [c] ; ax = c
+[   4]    0103: F7 D0                                 not ax      ; ax = NOT(c)
+[   5]    0105: 8B 1E 5F 01                           mov bx, [d] ; bx = d
+[   6]    0109: 0B C3                                 or  ax, bx  ; ax = ax OR bx = d OR NOT(C)
+[   7]        :                                       
+[   8]    010B: 8B 1E 59 01                           mov bx, [a] ; bx = a
+[   9]    010F: 23 D8                                 and bx, ax  ; bx = bx AND ax = a AND (d OR NOT(c))
+[  10]        :                                       
+[  11]    0111: A1 5B 01                              mov ax, [b] ; ax = b
+[  12]    0114: F7 D0                                 not ax      ; ax = NOT(b)
+[  13]    0116: 0B D8                                 or  bx,ax   ; bx = bx OR ax = a AND (d OR NOT(c)) OR NOT(b)
+[  14]        :                                       
+[  15]    0118: A1 5D 01                              mov ax, [c] ; ax = c
+[  16]        :                                       
+[  17]    011B: 23 C3                                 and ax,bx   ; ax = ax AND bx = a AND (d OR NOT(c)) OR NOT(b) AND c
+[  18]        :                                       
+[  19]    011D: E8 01 00                              call print
+[  20]    0120: C3                                    ret
+[  21]        :                                       
+[  22]    0121:                                       print proc
+[  23]    0121: B9 10 00                              mov cx, 16
+[  24]    0124:                                       cycle:
+[  25]    0124: 33 D2                                 xor dx,dx  ;clear trash
+[  26]    0126: F7 F1                                 div cx     ;ax - ostatok,  dx - chastnoe
+[  27]    0128: 8B DA                                 mov bx,dx  ;bx = dx
+[  28]    012A: 92                                    xchg ax,dx ;dx - ostatok,  ax - chastnoe
+[  29]    012B: 83 FA 09                              cmp dx, 9
+[  30]    012E: 7F 05                                 jg hex
+[  31]    0130: 83 C2 30                              add dx, 30h
+[  32]    0133: EB 03                                 jmp next
+[  33]    0135:                                       hex:
+[  34]    0135: 83 C2 37                              add dx, 37h
+[  35]    0138:                                       next:
+[  36]    0138: B4 02                                 mov ah, 2h ;vivod
+[  37]    013A: CD 21                                 int 21h    ;vivod
+[  38]        :                                       
+[  39]    013C: 83 FB 10                              cmp bx, 16
+[  40]    013F: 7D E3                                 jge cycle
+[  41]        :                                       
+[  42]    0141: 83 FB 09                              cmp bx, 9
+[  43]    0144: 87 DA                                 xchg bx,dx
+[  44]    0146: 7F 05                                 jg hex2
+[  45]    0148: 83 C2 30                              add dx, 30h
+[  46]    014B: EB 03                                 jmp next2
+[  47]    014D:                                       hex2:
+[  48]    014D: 83 C2 37                              add dx, 37h
+[  49]    0150:                                       next2:
+[  50]    0150: B4 02                                 mov ah, 2h
+[  51]    0152: CD 21                                 int 21h
+[  52]        :                                       ; wait for any key press:
+[  53]    0154: B4 00                                 mov ah, 0
+[  54]    0156: CD 16                                 int 16h
+[  55]    0158: C3                                    ret
+[  56]        :                                       print endp
+[  57]        :                                       
+[  58]    0159: 09 00                                 a dw 00001001b  ; 9 in decimal
+[  59]    015B: 12 00                                 b dw 00010010b  ; 18 in decimal
+[  60]    015D: E8 00                                 c dw 11101000b  ; -24 in decimal
+[  61]    015F: 2C 00                                 d dw 00101100b  ; 44 in decimal
+[  62]        :                                       
+[  63]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================

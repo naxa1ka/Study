@@ -1,0 +1,165 @@
+/*********************************************************************************
+* Project name: lab3_ *
+* Project type: Win32 Console Application *
+* File name: lab3_.cpp *
+* Language: CPP, MSVS 2019 and above *
+* Programmer: Кузнецов Илья Игоревич, Пенькова Алина Олеговна  М3О-109Б *
+* Modified by: Пенькова Алина Олеговна*
+* Created: 18.11.2019 *
+* Last revision: 02.12.2019 *
+* Comment: Одномерные массивы *
+**********************************************************************************/
+
+#include <iostream>
+#include <cmath>
+#include <fstream>
+#include <vector>
+using namespace std;
+int main() {
+	system("color F0");
+	setlocale(LC_ALL, "Russian");
+	int RAZMER; //размер массива
+	int P; //значение P (исходные данные)
+	int N; //значение N (исходные данные)ч	
+	int SumPosN = 0; //сумма первых n пололожительных элементов
+	int SumNewVecN = 0; //сумма vec, p и суммы первых n пололожительных элементов
+	ifstream fin;
+	fin.open("Text01.txt"); // начинаем чтение файла 
+	//НАЧАЛО ВВОДА И КОРРЕКТНОСТИ ВВЕДЕННЫХ ДАННЫХ
+	if (!fin) // если файл не найден
+	{
+		cout << "Ошибка! файл не найден" << endl; //вывод сообщения об ошибки
+		system("pause");
+		return 1;
+	}
+
+	if (fin.peek() == EOF) //если найденный файл пуст
+	{
+		cout << "Ошибка! файл пуст!" << endl;// вывод сообщения об ошибке
+		system("pause");
+		return 1;
+	}
+	int buff; // буффер для проверки корректности вводимых данных
+	while (!fin.eof()) { //проверка на ввод цифр
+		fin >> buff;
+		if (!fin){
+			cout << "Ошибка! Допустим ввод только цифр!" << endl;
+			system("pause");
+			return 1;
+		}
+	}
+
+	fin.seekg(0); //возврат чтения файла на самое начало 
+
+	fin >> P >> N >> RAZMER; //чтение значений величин P и N и размера массива
+
+	vector <int> VEC(RAZMER); //объявление массива (исходные данные)
+	vector <int> NEWVEC(RAZMER); //объявление нового массива
+	vector <int> MIN(RAZMER); //массив с индексами минимумов
+	vector <int> MAX(RAZMER); //массив с индексами максимумов
+
+	for (int i = 0; i < RAZMER; i++) { // обнуление массива
+		NEWVEC[i] = 0;
+	}
+
+	int CntVec = 0; //счетчик реального размера массива
+	while (!fin.eof()) //чтение элементов массива, пока элементы не закончатся
+	{	
+		if (CntVec >= RAZMER) //проверка на выход за границы массива
+		{
+			cout << "Ошибка! Количество входных элементов больше входного массива!" << endl;
+			system("pause");
+			return 1;
+		}
+		fin >> VEC[CntVec]; //чтение массива из файла
+		CntVec++; //подсчет количества элементов массив
+	}
+	fin.close(); //закрыть файл
+	if ((N > CntVec) || (N < 0)) { // проверка на границы массива
+		cout << "Ошибка! Число N не должно выходить за границы массива!" << endl;
+		system("pause");
+		return 1;
+	}
+	//КОНЕЦ ВВОДА И КОРРЕКТНОСТИ ВВЕДЕННЫХ ДАННЫХ
+	//НАЧАЛО ОСНОВНОЙ ЧАСТИ ПРОГРАММЫ
+	int counter = 0; //счетчик для подсчета N положительных элементов в массиве
+	for (int i = 0; i < CntVec; i++) { //суммирование первых N положительных элементов массива VEC	
+		if ((VEC[i] > 0) && (counter < N)) {
+			SumPosN += VEC[i];
+			counter++;
+		}
+	}
+	if (counter < N) {
+		cout << "Ошибка! Количество положительных элементов меньше заданного! (<N)" << endl;
+		system("pause");
+		return 1;
+	}
+	for (int i = 0; i < CntVec; i++) { //формирование нового массива
+		NEWVEC[i] = VEC[i] + P + SumPosN;
+	}
+	for (int i = CntVec - 1; i > CntVec - N - 1; i--) { //суммирование N последних элементов
+		SumNewVecN += NEWVEC[i];
+	}
+
+	int max = NEWVEC[0]; // значение максимального элемента
+	int min = NEWVEC[0]; // значение минимального элемента
+
+	for (int i = 0; i < CntVec; i++) { //поиск значений минимального и максимального элементов	
+		if (NEWVEC[i] > max) { //максимальное значение
+			max = NEWVEC[i];
+		}
+		if (NEWVEC[i] < min) { //минимальное значение
+			min = NEWVEC[i];
+		}
+	}
+	int countermin = 0; //счетчик минимумов
+	int countermax = 0; //счетчик максимумов	
+	for (int i = 0; i < CntVec; i++) { 
+		if (NEWVEC[i] == max) {
+			MAX[countermax] = i;
+			countermax++;
+		}
+		if (NEWVEC[i] == min) {
+			MIN[countermin] = i;
+			countermin++;
+		}
+	}
+
+	//КОНЕЦ ОСНОВНОЙ ЧАСТИ ПРОГРАММЫ
+	//ВЫВОД НАЧАЛО
+	cout << "Сформированный массив: " << endl;
+	for (int i = 0; i < CntVec; i++) {
+		cout << "NEWVEC[" << i << "]: " << NEWVEC[i] << endl;
+	}
+
+	cout << endl;
+	cout << "Сумма N{" << N << "} последних элементов сформированного элемента: " << SumNewVecN << endl << endl;
+
+	if (max == min) {
+		cout << "Все элементы одинаковы, нет минимума и максимума! И равны: " << max << endl;
+		system("pause");
+		return 1;
+	}
+
+	cout << "Положения наибольшего элемента: ";
+	for (int i = 0; i < countermax; i++) { cout << "[" << MAX[i] << "] "; }
+	cout << endl;
+	cout << "Значения наибольшего элемента: " << max << endl;
+	if (countermax > 1) {	
+		cout << "Количество максимумов: " << countermax << endl;
+	}
+	
+	cout << endl;
+	cout << "Положения наименьшего элемента: ";
+	for (int i = 0; i < countermin; i++) { cout << "[" << MIN[i] << "] "; }
+	cout << endl;
+	cout << "Значения наименьшего элемента: " << min << endl;
+	if (countermin > 1) {
+		cout << "Количество минимумов: " << countermin << endl;
+	}
+	
+	cout << endl;
+	//ВЫВОД КОНЕЦ
+	system("pause");
+	return 0; // завершение программы
+}

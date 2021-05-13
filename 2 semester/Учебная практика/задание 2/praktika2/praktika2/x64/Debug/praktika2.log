@@ -1,0 +1,3 @@
+﻿  praktika2.cpp
+C:\Users\iluxandro\source\repos\praktika2\praktika2\praktika2.cpp(125,36): warning C4244: инициализация: преобразование "double" в "size_t", возможна потеря данных
+  praktika2.vcxproj -> C:\Users\iluxandro\source\repos\praktika2\x64\Debug\praktika2.exe

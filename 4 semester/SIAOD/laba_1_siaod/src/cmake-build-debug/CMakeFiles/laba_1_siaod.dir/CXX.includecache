@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+S:/_CPP_projects/SIAOD/SIAOD/laba_1_siaod/src/main.cpp
+iostream
+-
+windows.h
+S:/_CPP_projects/SIAOD/SIAOD/laba_1_siaod/src/windows.h
+climits
+-
+vector
+-
+algorithm
+-
+iomanip
+-
+queue
+S:/_CPP_projects/SIAOD/SIAOD/laba_1_siaod/src/queue
+

@@ -1,0 +1,3 @@
+S:/_CPP_projects/SIAOD/SIAOD/laba_1_siaod/src/cmake-build-debug/CMakeFiles/laba_1_siaod.dir
+S:/_CPP_projects/SIAOD/SIAOD/laba_1_siaod/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+S:/_CPP_projects/SIAOD/SIAOD/laba_1_siaod/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir

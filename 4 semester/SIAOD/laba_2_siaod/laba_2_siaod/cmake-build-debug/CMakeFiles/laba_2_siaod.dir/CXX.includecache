@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/Node.h
+
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/Tree.cpp
+Tree.h
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/Tree.h
+iostream
+-
+iomanip
+-
+queue
+-
+
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/Tree.h
+Node.h
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/Node.h
+
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/main.cpp
+iostream
+-
+Tree.cpp
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/Tree.cpp
+

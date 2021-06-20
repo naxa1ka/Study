@@ -1,0 +1,3 @@
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/cmake-build-debug/CMakeFiles/laba_2_siaod.dir
+C:/Users/naxa1ka/Desktop/SIAOD/laba_2_siaod/laba_2_siaod/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,3 @@
+"S:\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\laba_2_siaod.dir/objects.a
+S:\MinGW\bin\ar.exe cr CMakeFiles\laba_2_siaod.dir/objects.a @CMakeFiles\laba_2_siaod.dir\objects1.rsp
+S:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\laba_2_siaod.dir/objects.a -Wl,--no-whole-archive -o laba_2_siaod.exe -Wl,--out-implib,liblaba_2_siaod.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\laba_2_siaod.dir\linklibs.rsp

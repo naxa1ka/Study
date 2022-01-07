@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Point" Collapsed="true">
+    <Position X="3.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAkAACEAAAAAAAAAAMAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Point.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rect" Collapsed="true">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAEAAAAEBAACCEAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Rect.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entity" Collapsed="true">
+    <Position X="3.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAAAAAAAAAAAAAAAAACBAAAAAIAAAAAAAAgA=</HashCode>
+      <FileName>Entity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EntityHandler" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAQAAAAAAAAAAAAAQAABCAgAAAAAiACAAIAAAAAAAAA=</HashCode>
+      <FileName>EntityHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bonus" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="IDyeable">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-2.035" Y="1.727" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAACAAAAAgAEAAAAIAgAAAAAAAA=</HashCode>
+      <FileName>Bonus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletBonus" Collapsed="true">
+    <Position X="2.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAA=</HashCode>
+      <FileName>BulletBonus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponBonus" Collapsed="true">
+    <Position X="4.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAABAAAAgAAAAAAAA=</HashCode>
+      <FileName>WeaponBonus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="8.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAIAAAAAAAAAAAAAAEAAAEIAgAAAAQAAA=</HashCode>
+      <FileName>Bullet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MagicBullet" Collapsed="true">
+    <Position X="6.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAQAIAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>MagicBullet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShieldBullet" Collapsed="true">
+    <Position X="8.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAIAAAAIAgEAAAAAAA=</HashCode>
+      <FileName>ShieldBullet.h</FileName>
+      <NewMemberFileName>RedBullet.h</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IBulletFactory" Collapsed="true">
+    <Position X="11.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>IBulletFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MagicBulletFactory" Collapsed="true">
+    <Position X="12.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>MagicBulletFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RedBulletFactory" Collapsed="true">
+    <Position X="10.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>RedBulletFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleBulletFactory" Collapsed="true">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleBulletFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IDyeable" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>IDyeable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BonusWall" Collapsed="true">
+    <Position X="14.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAEAgAAAAAAAA=</HashCode>
+      <FileName>BonusWall.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovableWall" Collapsed="true">
+    <Position X="14.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAgAABAABAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>MovableWall.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wall" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAACABEAAQAIAgAAAAAAAA=</HashCode>
+      <FileName>Wall.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoubleWeapon" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="IWeapon">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="0.225" Y="-0" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DoubleWeapon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWeapon" Collapsed="true">
+    <Position X="11.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IWeapon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QueueWeapon" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QueueWeapon.h</FileName>
+      <NewMemberFileName>SimpleWeapon.h</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TripleWeapon" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TripleWeapon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tank" Collapsed="true">
+    <Position X="12.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAABABABCAJIAAEEMAAAAAiAAsAACAIECAAAEAACA=</HashCode>
+      <FileName>Tank.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Location" Collapsed="true">
+    <Position X="3.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAYAAAAAAAYAA=</HashCode>
+      <FileName>Location.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RedBullet" Collapsed="true">
+    <Position X="10.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAA=</HashCode>
+      <FileName>RedBullet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameWorld" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAKAAAEgAAEACAAAgAAAAAIAAEACAABAAAAA=</HashCode>
+      <FileName>GameWorld.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WallGenerator" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAAAAAAAAAAECABgAAAAAIAAQAAAAAAIBBAAA=</HashCode>
+      <FileName>WallGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShieldBulletFactory" Collapsed="true">
+    <Position X="14.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>ShieldBulletFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleWeapon" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleWeapon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="DIRECTION" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Direction.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

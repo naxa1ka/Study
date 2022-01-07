@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Weapon">
+      <UniqueIdentifier>{99fc4c6a-5294-45ba-9566-13a37430b471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Weapon">
+      <UniqueIdentifier>{e38fbe2c-f8fe-46d6-866a-d02caf29eccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Entity">
+      <UniqueIdentifier>{8fd9d219-e702-4470-94ab-49e807c2befb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Entity">
+      <UniqueIdentifier>{80964270-a482-4672-8f3f-5b42ac29929c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Base">
+      <UniqueIdentifier>{c4e64c04-7673-4a68-bb3b-d28b3b48f29f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Base">
+      <UniqueIdentifier>{99f64586-1a62-4666-b24a-731cafcde439}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Bullet">
+      <UniqueIdentifier>{aa90c9de-f0d3-4819-ab8c-ed4914063823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Bullet">
+      <UniqueIdentifier>{751b56aa-93de-4f74-b75c-7d732c91d8f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Bullet\Factory">
+      <UniqueIdentifier>{51f6cede-9985-48ad-bc0f-93d87961341c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Bullet\Factory">
+      <UniqueIdentifier>{5e6a90c2-f4b3-449d-8b4b-1dd7af56b2e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Wall">
+      <UniqueIdentifier>{a65aefba-f130-4ef2-967d-b8cad1319518}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Wall">
+      <UniqueIdentifier>{45cdff64-9c00-42a7-bac2-5c37f437f828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\GameLoop">
+      <UniqueIdentifier>{7309d5ba-0560-4fe7-b442-cb12597add7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\GameLoop">
+      <UniqueIdentifier>{19350dc7-9578-4fbe-8548-ed5ce7794e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Bonus">
+      <UniqueIdentifier>{662e0161-9a60-48c2-971f-175993a59aef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Bonus">
+      <UniqueIdentifier>{4e83589b-8f5c-46da-90b0-2b8e5ab707ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Utils">
+      <UniqueIdentifier>{a7df5a00-0db3-4e5d-8682-016db5e08437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Utils">
+      <UniqueIdentifier>{1a9638fe-12db-4e28-b5e4-8be0b520336a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Color">
+      <UniqueIdentifier>{6ff44a5e-22c3-475f-85c9-a5af4addfdea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Color">
+      <UniqueIdentifier>{d327fead-b8d5-4f50-9107-b6dfdc93302c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DoubleWeapon.cpp">
+      <Filter>Исходные файлы\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="IWeapon.cpp">
+      <Filter>Исходные файлы\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleWeapon.cpp">
+      <Filter>Исходные файлы\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="TripleWeapon.cpp">
+      <Filter>Исходные файлы\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityHandler.cpp">
+      <Filter>Исходные файлы\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Исходные файлы\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Location.cpp">
+      <Filter>Исходные файлы\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Исходные файлы\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Исходные файлы\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Исходные файлы\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="IBulletFactory.cpp">
+      <Filter>Исходные файлы\Bullet\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleBulletFactory.cpp">
+      <Filter>Исходные файлы\Bullet\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="RedBullet.cpp">
+      <Filter>Исходные файлы\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="RedBulletFactory.cpp">
+      <Filter>Исходные файлы\Bullet\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicBullet.cpp">
+      <Filter>Исходные файлы\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicBulletFactory.cpp">
+      <Filter>Исходные файлы\Bullet\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Исходные файлы\Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="MovableWall.cpp">
+      <Filter>Исходные файлы\Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWorld.cpp">
+      <Filter>Исходные файлы\GameLoop</Filter>
+    </ClCompile>
+    <ClCompile Include="WallGenerator.cpp">
+      <Filter>Исходные файлы\GameLoop</Filter>
+    </ClCompile>
+    <ClCompile Include="Bonus.cpp">
+      <Filter>Исходные файлы\Bonus</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletBonus.cpp">
+      <Filter>Исходные файлы\Bonus</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponBonus.cpp">
+      <Filter>Исходные файлы\Bonus</Filter>
+    </ClCompile>
+    <ClCompile Include="GetConlWin.cpp">
+      <Filter>Исходные файлы\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="IDyeable.cpp">
+      <Filter>Исходные файлы\Color</Filter>
+    </ClCompile>
+    <ClCompile Include="BonusWall.cpp">
+      <Filter>Исходные файлы\Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueWeapon.cpp">
+      <Filter>Исходные файлы\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="ShieldBulletFactory.cpp">
+      <Filter>Исходные файлы\Bullet\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="ShieldBullet.cpp">
+      <Filter>Исходные файлы\Bullet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SimpleWeapon.h">
+      <Filter>Файлы заголовков\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="TripleWeapon.h">
+      <Filter>Файлы заголовков\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="IWeapon.h">
+      <Filter>Файлы заголовков\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleWeapon.h">
+      <Filter>Файлы заголовков\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityHandler.h">
+      <Filter>Файлы заголовков\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Файлы заголовков\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.h">
+      <Filter>Файлы заголовков\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Файлы заголовков\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Файлы заголовков\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Файлы заголовков\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="IBulletFactory.h">
+      <Filter>Файлы заголовков\Bullet\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleBulletFactory.h">
+      <Filter>Файлы заголовков\Bullet\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="RedBullet.h">
+      <Filter>Файлы заголовков\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="RedBulletFactory.h">
+      <Filter>Файлы заголовков\Bullet\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicBullet.h">
+      <Filter>Файлы заголовков\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicBulletFactory.h">
+      <Filter>Файлы заголовков\Bullet\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Файлы заголовков\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="MovableWall.h">
+      <Filter>Файлы заголовков\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWorld.h">
+      <Filter>Файлы заголовков\GameLoop</Filter>
+    </ClInclude>
+    <ClInclude Include="WallGenerator.h">
+      <Filter>Файлы заголовков\GameLoop</Filter>
+    </ClInclude>
+    <ClInclude Include="Bonus.h">
+      <Filter>Файлы заголовков\Bonus</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletBonus.h">
+      <Filter>Файлы заголовков\Bonus</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponBonus.h">
+      <Filter>Файлы заголовков\Bonus</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Файлы заголовков\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GetConlWin.h">
+      <Filter>Файлы заголовков\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="IDyeable.h">
+      <Filter>Файлы заголовков\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="BonusWall.h">
+      <Filter>Файлы заголовков\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueWeapon.h">
+      <Filter>Файлы заголовков\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="ShieldBullet.h">
+      <Filter>Файлы заголовков\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="ShieldBulletFactory.h">
+      <Filter>Файлы заголовков\Bullet\Factory</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>

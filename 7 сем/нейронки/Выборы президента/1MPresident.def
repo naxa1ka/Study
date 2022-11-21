@@ -1,0 +1,42 @@
+input number 1 12
+dictionary input   B  C  D  E  F  G  H  I  J  K  L  M
+
+output number 1 1
+dictionary output   A
+
+hidden 12
+
+
+display input   thermom 5 1 10 2 1
+display output  thermom 5 29
+display pattern thermom 6 29
+display color bold 5 29 1 10
+display screen   4 14
+ B         C                 A
+                         Out:
+ D         E             Ptn:
+ 
+ F         G
+ 
+ H         I
+ 
+ J         K
+ 
+ L         M
+
+
+filename trainfacts D:\НейроБрэйнМэйкер\Выборы
+
+filename testfacts D:\НейроБрэйнМэйкер\Выборы
+
+       B       C       D       E       F       G       H       I       J       K       L       M
+       A
+scale input minimum
+0       0       0       0       0       0       0       0       0       0       0       0       
+scale input maximum
+1       1       1       1       1       1       1       1       1       1       1       1       
+scale output minimum
+1       
+scale output maximum
+2       
+

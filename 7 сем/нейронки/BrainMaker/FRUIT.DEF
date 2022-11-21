@@ -1,0 +1,54 @@
+input symbol 1 7
+dictionary input small large red green yellow
+orange round
+
+hidden 10
+
+output symbol 1 8
+dictionary output cherry grape apple orange
+banana watermelon kiwi pineapple
+
+display input   thermom   5  1 7 1 1
+display output  thermom   5 21 8 1 1
+display pattern thermom   5 31 8 1 1
+display color bold  5 21 17 10 1
+display histogram hidden1  5 40
+display histogram output 15 40
+
+display screen 4 20
+small:               cherry:
+
+large:               grape:
+
+red:                 apple:
+
+green:               orange:
+
+yellow:              banana:
+
+orange:              watermelon:
+
+round:               kiwi:
+
+                     pineapple:
+
+                     output    pattern
+facts
+small red round
+.5 cherry .5 grape
+large green
+watermelon
+.5 small .5 large red round
+apple
+.5 large .5 small orange round
+orange
+yellow
+banana
+yellow .5 green
+banana
+small green round
+grape
+.5 red .5 green  small
+kiwi
+.4 red .4 green .2 yellow  large
+pineapple

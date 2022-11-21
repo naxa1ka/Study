@@ -1,0 +1,175 @@
+facts
+ 9084    
+4       0       1       0       1       18       [  low  female  PrimD14  Admit2
+73      
+ 7969    
+2       0       0       1       0       26       [  high  male  PrimD22  Admit4
+73      
+ 6656    
+3       0       0       1       0       26       [  unknown  female  PrimD33  Admit1
+31      
+ 5294    
+2       0       1       0       0       30       [  unknown  male  PrimD12  Admit2
+80      
+ 3757    
+1       0       1       0       1       18       [  low  male  PrimD31  Admit4
+54      
+ 1351    
+2       1       0       0       0       11       [  low  male  PrimD22  Admit2
+7       
+ 144     
+2       0       0       1       0       30       [  low  male  PrimD11  Admit1
+142     
+ 9099    
+5       1       0       0       0       4        [  high  male  PrimD25  Admit2
+26      
+ 8091    
+2       0       1       0       0       18       [  unknown  male  PrimD32  Admit4
+14      
+ 6753    
+2       1       0       0       0       30       [  high  male  PrimD12  Admit5
+65      
+ 5349    
+2       0       0       1       1       18       [  low  male  PrimD22  Admit4
+25      
+ 4049    
+5       1       0       0       0       4        [  high  male  PrimD15  Admit5
+70      
+ 2636    
+2       0       0       1       0       22       [  low  male  PrimD32  Admit4
+123     
+ 1758    
+2       1       0       0       1       4        [  unknown  female  PrimD32  Admit1
+14      
+ 9107    
+3       0       0       1       1       11       [  unknown  male  PrimD33  Admit5
+131     
+ 8157    
+1       0       0       1       0       26       [  high  female  PrimD11  Admit5
+22      
+ 6988    
+1       1       0       0       1       18       [  high  female  PrimD21  Admit4
+83      
+ 5552    
+1       1       0       0       0       15       [  low  male  PrimD11  Admit5
+52      
+ 4664    
+5       1       0       0       1       22       [  unknown  male  PrimD35  Admit4
+22      
+ 2795    
+2       0       0       1       0       30       [  unknown  male  PrimD22  Admit5
+73      
+ 1853    
+2       0       0       1       0       22       [  low  female  PrimD12  Admit4
+48      
+ 357     
+2       0       0       1       0       37       [  low  female  PrimD25  Admit3
+60      
+ 9235    
+2       0       0       1       0       15       [  low  male  PrimD12  Admit5
+80      
+ 7072    
+2       0       0       1       1       15       [  unknown  female  PrimD32  Admit3
+131     
+ 5683    
+5       0       0       1       1       15       [  high  female  PrimD35  Admit5
+140     
+ 4617    
+2       0       1       0       0       30       [  low  male  PrimD22  Admit4
+22      
+ 3127    
+2       0       1       0       0       41       [  high  female  PrimD12  Admit3
+80      
+ 1844    
+1       1       0       0       0       30       [  unknown  female  PrimD21  Admit3
+12      
+ 665     
+2       0       1       0       0       33       [  high  female  PrimD12  Admit4
+80      
+ 9484    
+3       0       1       0       1       15       [  unknown  male  PrimD23  Admit5
+80      
+ 8462    
+2       1       0       0       0       26       [  low  male  PrimD32  Admit5
+131     
+ 7210    
+2       0       0       1       0       15       [  low  female  PrimD12  Admit4
+45      
+ 4736    
+1       0       1       0       0       30       [  unknown  male  PrimD11  Admit4
+22      
+ 3180    
+2       1       0       0       0       12       [  low  female  PrimD12  Admit1
+30      
+ 2095    
+1       1       0       0       0       30       [  unknown  male  PrimD31  Admit5
+14      
+ 892     
+1       0       1       0       0       18       [  low  male  PrimD32  Admit2
+22      
+ 9513    
+1       0       1       0       0       15       [  unknown  male  PrimD31  Admit2
+50      
+ 8578    
+2       0       0       1       1       15       [  high  female  PrimD12  Admit5
+182     
+ 7417    
+3       1       0       0       0       26       [  unknown  male  PrimD23  Admit4
+31      
+ 6242    
+1       0       0       1       0       26       [  low  female  PrimD21  Admit4
+42      
+ 4805    
+2       0       1       0       1       42       [  unknown  female  PrimD22  Admit4
+160     
+ 2153    
+2       1       0       0       0       30       [  low  male  PrimD12  Admit2
+14      
+ 965     
+1       0       0       1       0       26       [  high  male  PrimD1  Admit5
+50      
+ 9725    
+2       1       0       0       0       4        [  low  female  PrimD32  Admit4
+20      
+ 8753    
+2       1       0       0       1       15       [  high  male  PrimD22  Admit5
+131     
+ 7534    
+5       0       0       1       0       30       [  unknown  female  PrimD35  Admit5
+80      
+ 6285    
+1       0       0       1       0       30       [  high  male  PrimD11  Admit5
+65      
+ 4915    
+5       1       0       0       0       15       [  low  male  PrimD35  Admit3
+80      
+ 3425    
+2       0       1       0       0       26       [  unknown  male  PrimD22  Admit1
+80      
+ 2314    
+2       0       0       1       0       30       [  unknown  female  PrimD22  Admit4
+22      
+ 9915    
+6       1       0       0       0       11       [  unknown  female  PrimD26  Admit5
+54      
+ 8873    
+2       0       0       1       0       26       [  unknown  male  PrimD12  Admit4
+22      
+ 7746    
+2       0       1       0       0       18       [  low  male  PrimD12  Admit5
+73      
+ 6427    
+5       1       0       0       0       18       [  unknown  male  PrimD25  Admit2
+65      
+ 5193    
+1       0       0       1       0       22       [  unknown  female  PrimD21  Admit2
+80      
+ 3727    
+2       0       1       0       0       30       [  unknown  male  PrimD32  Admit2
+80      
+ 2437    
+1       0       1       0       0       30       [  low  male  PrimD11  Admit1
+25      
+ 1143    
+5       1       0       0       0       1        [  unknown  male  PrimD15  Admit4
+7       

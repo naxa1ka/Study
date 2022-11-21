@@ -1,0 +1,46 @@
+input number 1 31
+dictionary input   Diags  Rehab/Di  Hyperten  Smoker  Fam-Spt  Age  low  high  unknown  female  male  PrimD14  PrimD22  PrimD33  PrimD12  PrimD31  PrimD11  PrimD25  PrimD32  PrimD15
+  PrimD21  PrimD35  PrimD27  PrimD23  PrimD1  PrimD26  Admit2  Admit4  Admit1  Admit5  Admit3
+
+output number 1 1
+dictionary output   LOS
+
+hidden 31
+
+
+display input   thermom 5 1 10 4 1
+display output  thermom 5 45
+display pattern thermom 6 45
+display color bold 5 45 1 10
+display screen   4 18
+ Diags     Rehab/Di  Hyperten  Smoker        LOS
+                                         Out:
+ Fam-Spt   Age       low       high      Ptn:
+
+ unknown   female    male      PrimD14
+
+ PrimD22   PrimD33   PrimD12   PrimD31
+
+ PrimD11   PrimD25   PrimD32   PrimD15
+
+ PrimD21   PrimD35   PrimD27   PrimD23
+
+ PrimD1    PrimD26   Admit2    Admit4
+
+ Admit1    Admit5    Admit3
+
+
+filename trainfacts LOS3.fct
+
+filename testfacts LOS3.tst
+
+   Diags Rehab/D Hyperte  Smoker Fam-Spt     Age     low    high unknown  female    male PrimD14 PrimD22 PrimD33 PrimD12 PrimD31 PrimD11 PrimD25 PrimD32 PrimD15 PrimD21 PrimD35 PrimD27 PrimD23  PrimD1 PrimD26  Admit2  Admit4  Admit1  Admit5  Admit3
+     LOS
+scale input minimum
+1       0       0       0       0       1        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+scale input maximum
+7       1       1       1       1       64       1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+scale output minimum
+7
+scale output maximum
+182

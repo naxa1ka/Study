@@ -1,0 +1,85 @@
+input number 1 12
+output number 1 1
+hidden 12
+
+filename trainfacts D:\___учеба\7 сем\нейронки\lab1\exp5\input2.fct
+filename testfacts D:\___учеба\7 сем\нейронки\lab1\exp5\input2.tst
+checkpoint 8 checkpt.net
+
+learnrate  1.0000 constant
+learnlayer  1.0000  1.0000
+smoothing  0.9000
+
+traintol  0.1000
+testtol  0.4000
+
+
+function hidden1 sigmoid  0.0000  1.0000  0.0000 1.0000 
+function output sigmoid  0.0000  1.0000  0.0000 1.0000 
+
+dictionary input B C D E F G H I J K
+L M
+
+dictionary output A
+
+
+display input thermom 5 1 10 2 1
+display output thermom 5 29 1 1
+display pattern thermom 6 29 1 1
+display color bold 5 29 1 10
+display string 4 1 B         C                 A
+display string 5 25 Out:
+display string 6 1 D         E             Ptn:
+display string 7 1 
+display string 8 1 F         G
+display string 9 1 
+display string 10 1 H         I
+display string 11 1 
+display string 12 1 J         K
+display string 13 1 
+display string 14 1 L         M
+displayon
+scale input minimum
+0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000 
+scale input maximum
+1.0000  1.0000  1.0000  1.0000  1.0000  1.0000  1.0000  1.0000  1.0000  1.0000  1.0000  1.0000 
+scale output minimum
+1.0000 
+scale output maximum
+2.0000 
+
+statistics 0 0 0
+stathistory 0
+
+
+weights 3 1 12 12 1
+-0.7446  0.2974  1.4706  1.5176 -2.1616 -0.1540  0.1104  0.3666 -1.9184  0.1552  2.7356 -3.2326 -0.7166
+-0.4934  1.4064  1.8660 -1.2546  1.1156  0.0560  1.2454  0.1000 -0.7230  0.6246  2.0694  0.8236 -1.2312
+-1.0986 -0.2010 -0.8262 -0.3982 -1.6160 -2.3908 -0.2650 -0.2020  0.5816 -0.5444  2.3214  0.9256 -1.9246
+ 1.7530 -0.7860 -0.2054 -1.9090 -1.0722  0.1076 -0.4660  1.7022  2.8170 -2.5454 -0.1046 -1.7156 -0.3008
+ 1.1234  0.0270  0.1764 -1.1852 -0.4208 -0.1462 -1.6864  0.4802 -1.2942 -1.3070 -0.3376  0.2444 -1.7672
+ 0.8044  0.8760  1.3700  0.0570 -1.2530  3.5482 -3.1944  1.3120  1.1124 -2.4250  1.0776 -1.4810  0.6342
+-0.0250 -1.0076 -1.3112  0.5296  0.8150  1.0892  1.2914 -2.1346 -2.1216 -0.7220 -1.7400  0.1914  0.8146
+ 2.8870 -2.4454 -0.7952  2.0344  2.6116  0.9886 -1.5352  1.6572  1.0222  0.0594  0.9344 -2.1890 -1.3070
+ 0.9084  0.6450 -0.8924  1.1390  0.7544 -0.6582 -0.3108 -0.5956 -1.0182 -3.2226  0.0214  0.5632  1.2994
+-2.3564 -1.4186  1.3770  0.3324  0.4776  0.1652  3.5504 -0.8090  1.8280 -0.7362  1.2424  0.3786  0.4066
+-1.9236  0.4912 -1.1400 -1.5232  0.9680 -0.2082  1.4706  1.8584 -2.1636 -0.1950 -0.8094  0.5102  1.5382
+ 1.9734  0.4134  1.8120  0.7570 -1.1852  1.8400 -1.3312 -1.1806  0.2610 -1.8284 -1.3680 -0.1686  0.3900
+
+-2.6280 -1.0600 -2.4116 -0.3952 -0.1336 -0.9980 -2.2444  1.8574 -1.4606 -1.0020  2.6208  0.7934 -1.8542
+
+deltas
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA
+

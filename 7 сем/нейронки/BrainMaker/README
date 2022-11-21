@@ -1,0 +1,371 @@
+This file contains the following information:
+
+I   BrainMaker Professional v3.11 new features
+II  BrainMaker Professional v3.0 additional information
+III Instructions on upgrading from earlier versions of BrainMaker
+
+Sections I and II are important information for all users.  Section III is
+important for upgrading customers only.
+
+€ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
+€ I. BrainMaker Professional V3.11 New Features                               €
+€‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹€
+
+UPDATE TO GETTING STARTED
+
+Note that page 28 of the Getting Started Manual should say: "the minimum
+is -2.8 and the maximum is 2.8 so the range is 5.6.  With the training
+tolerance of .1, any output that is within plus or minus .56 (range *
+tolerance) of the pattern will be considered "Good."
+
+COMPETITOR CORRECTION
+
+On page 16-7 of the manual, the documentation is incorrect. The left column
+is the order in which the horses are predicted to finish; the right is the
+entry number. On the screen, the columns are labelled incorrectly, also.
+The left column should be labelled Predict, the right Entry. The entry number
+corresponds to the order in which you entered the horses into your file.
+
+BRAINMAKER NEW FEATURES
+
+Copy and Paste
+
+    Copy and Paste transfer information between BrainMaker and other
+    programs.  However, in order for these functions to be most useful, they
+    differ in two important ways from the Windows standard for Copy and
+    Paste:
+
+    1.  In order to have useful information (the outputs) to put into the
+        Windows clipboard, Copy runs facts from the running fact file
+        through BrainMaker before copying the outputs to the clipboard.
+
+    2.  Paste actually performs both a paste and copy function, and also
+        runs facts through BrainMaker.  When facts are pasted from the
+        clipboard into BrainMaker, they are run through the trained network,
+        and the output(s) are copied into the Windows clipboard.  Because
+        the outputs overwrite the facts copied from the clipboard, it is not
+        possible to select Paste twice to repeat pasting facts from another
+        application into BrainMaker.
+
+    Details on using Copy and Paste are found in the new pages you received
+    for Chapters 10 and 11.
+
+DDE (Dynamic Data Exchange)
+
+    Dynamic Data Exchange (DDE) passes information between BrainMaker and
+    other programs automatically.  When you link files in different
+    applications, DDE exchanges data between them without further user
+    involvement.  The drive and path where BrainMaker is located must be
+    placed in your path environment variable.  Without it, the linked
+    program will be unable to find BrainMaker.
+
+    If you load a trained network which has a link to a file in another
+    program, you will be asked if you wish to reestablish the link.  If you
+    do, information will automatically be passed between the programs.  If
+    you don't wish to reestablish the link, you will need to recreate it in
+    BrainMaker at a later time.
+
+    If you create a DDE link to another application, and the other
+    application saves the information for the DDE link and restores it when
+    reading the document back in, the other application will typically start
+    an instance of BrainMaker to perform its DDE calculations.  This
+    instance of BrainMaker exists only to process the DDE link and will
+    behave improperly if you bring it to the front and attempt to perform
+    operations such as training, testing, or running.  If you want to work
+    directly with the network being used for a DDE link as described above,
+    you should open a separate instance of BrainMaker and work with your
+    network there.
+
+    Details on using DDE are found in the new pages you received for
+    Chapters 10 and 11.
+
+Test Every N Facts
+
+    A new feature on the Training Control Flow form, Test Every N Facts,
+    permits you to test your network during each training iteration.  For
+    example, if you have 35 facts in your training file and you set Test
+    Every N Facts to 10, BrainMaker will test your network after training
+    facts 10, 20, 30 and 35.  (If the number of facts in your training set
+    is not evenly divisible by the value you enter, BrainMaker will also
+    test at the end of the run.) BrainMaker will use the testing file
+    specified on the Select Fact Files dialog box.  Testing statistics will
+    be saved if you choose Testing Statistics from the File menu.
+
+    The Network File directive, testruns, now has an optional additional
+    parameter.  The new format is as follows:
+
+        testruns [runs] [facts]
+
+    where [runs] allows you to specify the number of training runs to elapse
+    before testing, and [facts] specifies the number of facts to pass through
+    training during one iteration before testing.  If you specify only the
+    first parameter, BrainMaker will test your network at the run interval
+    you specify.
+
+STOP TRAINING WHEN
+
+Training Average Error <= N
+
+    BrainMaker will stop training when the Training Average Error is equal
+    to or less than the value you specify.
+
+    The new network file directive is
+
+        stoptraining trainavgerr [n]
+
+    where [n] is a value between 0 and 1 indicating the training average
+    error at which the network should stop training.
+
+Testing Average Error <= N
+
+    BrainMaker will stop training when the Testing Average Error is equal to
+    or less than the value you specify.
+
+    The new network file directive is
+
+        stoptraining testavgerr [n]
+
+    where [n] is a value between 0 and 1 indicating the testing average
+    error at which the network should stop training.
+
+Saving the Network Progress Display, deltas, and heuristic learning rate
+parameters:
+
+    BrainMaker Professional v3.11 now saves parameters which permit you to
+    duplicate exactly results when you continue training a partially-trained
+    network.  In previous releases, if, for example, you saved a network at
+    run 200 and continued training, testing at run 250, the testing
+    statistics might be different than those obtained by loading the network
+    saved at run 200 and training to run 250.  This problem has been
+    eliminated by saving deltas and additional heuristic learning rate
+    parameters.  This requires no action on your part.  However, you will
+    notice that your trained network file (filename.net) is now much larger
+    than it was, and that there are additional commands in your network file:
+
+        deltas
+
+    ... followed by matrices of letters, to keep track of changes made
+    necessary by the Smoothing Rate.
+
+    To exactly duplicate results when saving a partially-trained network,
+    you must save the network at the end of a run.  When the partially-
+    trained network is loaded, BrainMaker begins at the beginning of the
+    run, not at the position in the fact file where the network was saved.
+
+        learnrate [n] auto [n n n]
+
+    The additional numbers following "auto" are used to keep track of
+    information for resuming training with the heuristic learning rate.
+
+        stathistory [n]
+
+    keeps track of information needed for the Network Progress Display.
+
+    NOTE: The inclusion of the deltas may increase the saved network size by
+    as much as 25%.  If you don't want BrainMaker to save deltas, add the
+    following command to the BrainMak.ini file (in your Windows directory):
+
+        nodeltas
+
+NETMAKER NEW FEATURES
+
+    NetMaker's interface has been improved.  A highlight bar is displayed
+    above the column or beside the row you have selected.  Clicking a
+    selected column or row de-selects it.  The box surrounding the column or
+    row label now indicates the position of the cursor, rather than that the
+    column or row has been selected.
+
+Importing CSI format files into NetMaker
+
+    You can now import data from CSI into NetMaker.  Choose the CSI format
+    when you read in the file.  Instructions are included in the new pages
+    you received for Chapter 9.
+
+Write Files Now option in NetMaker
+
+    If you have already declared inputs, patterns, and annotations, you
+    can bypass having NetMaker confirm all NotUsed columns by selecting
+    Write Files Now from the form that is displayed.  Choosing Cancel
+    interrupts the query/write files process.
+
+NetMaker Paste function
+
+    You can now import data from any program by opening the file in that
+    program, copying the necessary rows and columns to the Windows
+    clipboard, and then selecting Paste from the File menu in NetMaker.
+    The data will overwrite any data currently on-screen.  There is
+    currently no utility which permits appending data within NetMaker.
+
+
+€ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
+€ II. BrainMaker Professional V3.11 Additional Information                    €
+€‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹€
+
+NetMaker limits:
+
+    Files can be imported from dBASE III, Excel (through version 3.0), and
+    Lotus 1-2-3 (through version 3.0).  The current version of NetMaker
+    cannot read Quattro or Paradox files.  However, using the new Paste
+    function in NetMaker, you can now import from any data format by copying
+    data from that file to the Windows clipboard.  Then select Paste from
+    the File menu.  This will overwrite data currently on-screen.
+
+Possible NetMaker graphing incompatibility with Hercules monitors
+
+    If you have a Hercules monitor, you may encounter a problem when
+    displaying or printing a graph.  It appears to occur only when plotting
+    dashed line-style graphs with extremely sharp peaks.  If you should
+    encounter this problem, try dsiplays plotting traces as solid lines
+    instead of dashed lines.  If the problem persists, please contact us.
+
+Binary Files:
+
+    BrainMaker Professional and the BrainMaker Toolkit create binary format
+    files (with the extensions .bin and .bts) which preprocess fact files to
+    speed training.  BrainMaker creates and uses these files automatically;
+    you never need to give the name of a binary file to BrainMaker.
+
+    These files are automatically erased and rewritten if you make certain
+    changes during training, or if you edit your files.  BrainMaker compares
+    the dates of your files to the corresponding binary files.  If the
+    binary files have an earlier date or time, BrainMaker will delete and
+    recreate them before attempting to train or test.
+
+    To free space on yor disk, you may delete these files when you are not
+    in BrainMaker.  You may also add the command "nobinary" to BrainMak.cfg
+    (DOS) or BrainMak.Ini (Windows) if you do not wish for BrainMaker to
+    create and use binary files.
+
+Specify location of data files
+    In order to specify the location where BrainMaker programs will read and
+    write files, click on the BrainMaker program icon and, from the Program
+    Manager, choose File / Properties.  Enter the drive and path under
+    Working Dirctory.  Repeat this step for all other icons in your
+    BrainMaker Professional directory.
+
+    Please note that the "datafiles" statement described on page 12-24 of
+    your user's manual is used in the DOS version of BrainMaker only.  This
+    statement has no function in the Windows version.
+
+Runtime.c
+
+    Runtime.c can be used only with numeric data files.  It cannot be used
+    with symbolic or picture data.
+
+    The BrainMaker Professional Runtime system now works with EMS and XMS.
+    RuntimeX.obj is the Borland C++ object file which permits you to use EMS
+    or XMS memory with Runtime.c.  (The only time you need RuntimeX.obj is
+    if your network is large enough to require EMS or XMS memory.) Uncomment
+    line 53 (#define EMSXMS) of Runtime.c and link with RuntimeX.obj to use
+    EMS/XMS.
+
+    Note: A runtime file which enables you to use EMS or XMS memory with the
+    Microsoft compiler will be provided on request.
+
+    Runtime.c is source code intended for a DOS application.  Some
+    modification will have to be made to use Runtime.c with a Windows
+    application.
+
+Batch Mode Operations
+
+    All batch mode operations run minimized in the background.  When you
+    invoke a batch mode operation, you will see a minimized BrainMaker
+    icon displayed while the function is being performed.
+
+Random Weight Matrices
+
+    The random seed used under Windows 3.11 varies under different
+    conditions.  If you go from Netmaker to BrainMaker, the resulting weight
+    matrix will be different than if you load BrainMaker directly from
+    Windows.  In order to make tutorials work precisely as described, it is
+    important to follow the steps in the tutorials exactly.
+
+Single Step, Pause on Bad Fact
+
+    While running BrainMaker in Single Step or Pause on Bad Fact modes, i.e.
+    when the Next Fact button is visible within the BrainMaker window, you
+    cannot use Alt + (letter) to activate items in the menu bar.  Instead,
+    to choose commands from the menu bar using the keyboard while in either
+    of these modes, press and release the Alt key, then press the letter
+    corresponding to the desired menu item.  Shortcut keys (e.g. Ctrl + T)
+    or the mouse will operate normally in these modes.
+
+Text Editors
+
+    When editing files used by BrainMaker or NetMaker, it is important to
+    insure that your editor creates and saves ASCII text files.  Windows
+    comes with two editors, NotePad and Write, which you may use to create
+    or edit files.  (The SEE editor, referenced in the manual, is not
+    provided with the Windows version, because it does not run under
+    Windows.)
+
+€ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
+€ III. Information for customers upgrading from earler versions to Pro 3.0    €
+€‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹€
+
+Assignment of "Hot Keys"
+
+    Windows requires the assignment of certain hot keys.  For this reason,
+    some hot key assignments have been changed from earlier versions.  For
+    example, exiting BrainMaker or NetMaker is now Alt + X, rather than
+    Ctrl + Z.
+
+Customizing colors
+
+    The MenuComp utility is gone.  If you own DOS BrainMaker 3.0, you can
+    change colors using the System menu.  The changes will be saved to the
+    configuration file.  If you are using the Windows version, use the
+    Program Manager to change colors.
+
+Network file directives
+
+    In order to reduce confusion, we now refer to definition file commands
+    as "network file directives", because they may be used in both the
+    definition and network files.
+
+Converting files from BrainMaker Professional 2.0:
+
+    .Def and .Net files are compatible for versions 2.5 and 3.0. However,
+    both .def and .net files have been changed from version 2.0.  The
+    utility program NETCNVRT.EXE has been included to convert 2.0 files to
+    the new format.  We recommend you create a backup of all your .net and
+    .def files before executing the conversion program.
+
+    To run the conversion program, exit to DOS and, from the DOS prompt,
+    type:
+
+    netcnvrt <filename>.def
+        -or-
+    netcnvrt <filename>.net
+
+    NetCnvrt assumes that files ending in .NET are BrainMaker saved network
+    files, and that files with other extensions are definition files.  If
+    you have a network savefile with a different extension, make a copy with
+    the extension .NET and run NetCnvrt on the copy.
+
+    For some definition files, NetCnvrt needs to read (but not change) your
+    training fact file.  When running NetCnvrt on a definition file that
+    does not include facts, you should include the name of the factfile
+    after the definition filename:
+
+    netcnvrt <filename>.def <filename>.fct
+
+    If a definition file contains the training facts, a copy of the facts
+    will be placed in the file filename.fct.
+
+    NetCnvrt will rename your existing file to filename.BAK.  For this
+    reason, do not run NetCnvrt on any file that already has this extension.
+    Once you have successfully converted all your definition and network
+    files to 3.0's format, you may safely delete these backup files.
+
+Converting old trained networks from earler versions of Standard BrainMaker
+Professional BrainMaker v3.0:
+
+    1.  Using your old version of BrainMaker, read in your trained network
+        and write the weights out to a file.
+
+    2.  Copy the old definition file and insert the weights into the file
+        after the min/max and before facts.
+
+    3.  Take this definition file over to the Professional v3.0 programs and
+        run the netconversion program on it, as described above.

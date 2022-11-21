@@ -1,0 +1,47 @@
+input number 1 17
+dictionary input   DWLUN  RDOS  YRBLT  TOTFIXT  HEATING  WBFPSTKS  BMNTGAR  ATTFRGAR  TOTLIVAR  DECK/OFP  ENCLPOR  NBHDGRP  RECROOM  FINBSMT  GRADE%  CDU  TOTOBY
+
+output number 1 1
+dictionary output   SALEPRIC
+
+hidden 17
+
+
+display input   number  5 1 10 2 1
+display output  number  5 19
+display pattern number  6 19
+display color bold 5 19 1 7
+display screen   4 20
+ DWLUN  RDOS       SALEPR
+               Out:
+ YRBLT  TOTFIX Ptn:
+
+ HEATIN WBFPST
+
+ BMNTGA ATTFRG
+
+ TOTLIV DECK/O
+
+ ENCLPO NBHDGR
+
+ RECROO FINBSM
+
+ GRADE% CDU
+
+ TOTOBY
+
+
+filename trainfacts RE2.fct
+
+filename testfacts RE2.tst
+
+   DWLUN    RDOS   YRBLT TOTFIXT HEATING WBFPSTK BMNTGAR ATTFRGA TOTLIVA DECK/OF ENCLPOR NBHDGRP RECROOM FINBSMT  GRADE%     CDU  TOTOBY
+ SALEPRI
+scale input minimum
+1       0       1850    5       2       0       0       0       714     0       0       1       0       0       0.85    3       0
+scale input maximum
+3       23      1986    17      3       1       2       228     4185    738     452     2       672     810     1.08    5       16400
+scale output minimum
+103000
+scale output maximum
+250000

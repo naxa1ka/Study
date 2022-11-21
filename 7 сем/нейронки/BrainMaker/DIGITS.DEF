@@ -1,0 +1,115 @@
+input   picture 8 8
+
+hidden  25
+
+output  symbol 1 10
+dictionary output 0 1 2 3 4 5 6 7 8 9
+
+display  input   picture  5 16
+display  pattern picture  8 42
+display  output  picture  9 42
+
+display  screen  4 14
+               ษออออออออป
+               บ        บ
+               บ        บ
+               บ        บ       ษออออออออ 0123456789 อป
+               บ        บ       บpattern:             บ
+               บ        บ       บoutput:              บ
+               บ        บ       ศอออออออออออออออออออออผ
+               บ        บ
+               บ        บ
+               ศออออออออผ
+                 Input
+
+facts
+........
+..XXXXX.
+.X....XX
+.X...X.X
+.X..X..X
+.X.X...X
+.XX....X
+..XXXXX.
+0
+........
+....X...
+...XX...
+....X...
+....X...
+....X...
+....X...
+..XXXXX.
+1
+........
+..XXXXX.
+.X.....X
+.......X
+....XXX.
+...X....
+..X....X
+.XXXXXXX
+2
+........
+..XXXXX.
+.X.....X
+.......X
+....XXX.
+.......X
+.X.....X
+..XXXXX.
+3
+........
+....XXX.
+...X..X.
+..X...X.
+.X....X.
+.XXXXXXX
+......X.
+......X.
+4
+........
+.XXXXXXX
+.X......
+.X......
+.XXXXXX.
+.......X
+.X.....X
+..XXXXX.
+5
+........
+..XXXXX.
+.X......
+.X......
+.XXXXXX.
+.X.....X
+.X.....X
+..XXXXX.
+6
+........
+.XXXXXXX
+.......X
+......X.
+.....X..
+....X...
+...X....
+...X....
+7
+........
+..XXXXX.
+.X.....X
+.X.....X
+..XXXXX.
+.X.....X
+.X.....X
+..XXXXX.
+8
+........
+..XXXXX.
+.X.....X
+.X.....X
+..XXXXXX
+.......X
+.......X
+..XXXXX.
+9

@@ -1,0 +1,12 @@
+   diags rehab/d hyperte  smoker fam.sup     age               _      __     ___    ____   _____  ______ _______ _______ unknown     low    high  female    male PrimD35 PrimD22 PrimD12  PrimD1 PrimD11  Admit3  Admit2  Admit5  Admit4  Admit1
+facts run
+ 5450    
+2       0       0       1       1       20       [  unknown  female  PrimD35  Admit3
+ 3668    
+2       0       0       1       0       8        [  low  male  PrimD22  Admit2
+ 9568    
+3       0       0       0       0       40       [  unknown  male  PrimD12  Admit5
+ 2750    
+1       0       1       0       0       41       [  high  female  PrimD1  Admit4
+ 8040    
+2       1       0       0       0       12       [  low  female  PrimD11  Admit1

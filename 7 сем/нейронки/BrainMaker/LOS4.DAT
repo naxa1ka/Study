@@ -1,0 +1,6 @@
+ Patient  PrimDia  diags    Admit#   rehab/di hyperten smoker   fam.sup. age      heredity sex
+    5450       35        2        3        0        0        1        1       20  unknown   female
+    3668       22        2        2        0        0        1        0        8      low     male
+    9568       12        3        5        0        0        0        0       40  unknown     male
+    2750        1        1        4        0        1        0        0       41     high   female
+    8040       11        2        1        1        0        0        0       12      low   female

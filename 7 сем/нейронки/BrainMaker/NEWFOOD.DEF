@@ -1,0 +1,44 @@
+input number 1 7
+dictionary input   Plastic  Labor  Sales  Interest  DOW  Volume  FoodStk
+
+output number 1 1
+dictionary output   Stk+1
+
+hidden 10
+
+
+display input   thermom 5 1 7 1 1
+display output  thermom 5 19
+display pattern thermom 6 19
+display color bold 5 19 1 10
+display screen   4 16
+ Plastic           Stk+1
+               Out:
+ Labor         Ptn:
+ 
+ Sales
+ 
+ Interest
+ 
+ DOW
+ 
+ Volume
+ 
+ FoodStk
+
+
+filename trainfacts NEWFOOD.fct
+
+filename testfacts NEWFOOD.tst
+
+ Plastic   Labor   Sales Interes     DOW  Volume FoodStk
+   Stk+1
+scale input minimum
+24      21.1    9       3.1     2523    50      113     
+scale input maximum
+26.6    27.5    9.85    5.8     2565    82      117.2   
+scale output minimum
+113.4   
+scale output maximum
+117.2   
+

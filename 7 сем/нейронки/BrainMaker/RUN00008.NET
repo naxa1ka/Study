@@ -1,0 +1,72 @@
+input number 1 17
+output number 1 1
+hidden 9
+
+filename trainfacts RE2.fct
+filename testfacts RE2.tst
+filename trainstats RE2.STS
+filename teststats RE2.STA
+checkpoint 8 checkpt.net
+periodic 4 RUN?????.NET
+
+learnrate  1.0000 constant
+learnlayer  1.0000  1.0000
+smoothing  0.9000
+
+traintol  0.2000
+testtol  0.2000
+testruns 1
+
+
+function hidden1 sigmoid  0.0000  1.0000  0.0000 1.0000
+function output sigmoid  0.0000  1.0000  0.0000 1.0000
+
+dictionary input DWLUN RDOS YRBLT TOTFIXT HEATING WBFPSTKS BMNTGAR ATTFRGAR TOTLIVAR DECK/OFP
+ENCLPOR NBHDGRP RECROOM FINBSMT GRADE% CDU TOTOBY
+
+dictionary output SALEPRIC
+
+
+display input number 5 1 10 2 1
+display output number 5 25 1 1
+display pattern number 6 25 1 1
+display color bold 5 25 1 8
+display string 4 1 DWLUN   RDOS            SALEPRI
+display string 5 21 Out:
+display string 6 1 YRBLT   TOTFIXT     Ptn:
+display string 7 1
+display string 8 1 HEATING WBFPSTK
+display string 9 1
+display string 10 1 BMNTGAR ATTFRGA
+display string 11 1
+display string 12 1 TOTLIVA DECK/OF
+display string 13 1
+display string 14 1 ENCLPOR NBHDGRP
+display string 15 1
+display string 16 1 RECROOM FINBSMT
+display string 17 1
+display string 18 1 GRADE%  CDU
+display string 19 1
+display string 20 1 TOTOBY
+scale input minimum
+1.0000  0.000n  1850.0  5.0000  2.0000  0.000n  0.000n  0.000n  714.00  0.000n  0.000n  1.0000  0.000n  0.000n  0.8500  3.0000  0.000n
+scale input maximum
+3.0000  22.999  1986.0  17.000  3.0000  1.0000  2.0000  228.00  4185.0  737.99  452.00  2.0000  672.00  810.00  1.0800  5.0000  16400.
+scale output minimum
+103000
+scale output maximum
+250000
+
+statistics 1560 313 8
+weights 3 1 17 9 1
+-0.4266  0.0996  1.1902  1.3854 -1.7694 -0.1308  0.1872  0.3364 -1.4834  0.2440  2.3250 -3.0250 -0.6734 -0.3940  0.9950  1.4642 -1.0044  0.7004
+-0.3934  1.0436  0.0334 -0.9122  0.2386  1.9482  0.2054 -1.2872 -1.3180 -0.3620 -0.5632  0.1170 -1.1812 -2.2572 -0.3276  0.1132  0.4590 -0.2786
+ 2.0672  0.7884 -1.6774  1.5364 -0.5664 -0.0146 -1.4362 -0.7524  0.1652 -0.3470  1.3720  2.1652 -2.1726 -0.1010 -1.5022 -0.3690  1.0440 -0.0864
+ 0.4634 -0.9894 -0.3252  0.0642 -1.2422  0.0566 -0.8846 -0.9256 -0.1006  0.3644 -1.5450  0.3556  0.6432  1.1930  0.1680 -1.0536  3.0870 -2.6764
+ 2.0500  1.0512 -1.8930  1.5510 -1.0452  0.1550  0.4640 -0.5532 -0.2986  0.9586  0.6496  0.4184  0.8916 -1.7694 -1.3106 -0.5740 -1.3480  0.4282
+ 0.3572  2.2830 -2.1824 -0.9462  1.7290  2.2194  0.6406 -1.3662  1.1146  0.6654  0.0226  1.0286 -1.7960 -1.1106  0.4900  0.5152 -0.8544  0.7012
+ 0.3274 -0.6022 -0.3830 -0.7294 -1.1356 -2.3660 -0.2480  0.2934  0.8646 -2.1614 -1.2200  1.4920  0.3994  0.2332 -0.0602  3.0176 -0.7352  1.4714
+-0.3270  1.0320  0.3282  0.5374 -1.3700  0.0482 -0.6544 -1.0154  1.0372  0.0052  1.1984  1.2412 -2.1350 -0.0456 -0.6394  0.4022  1.2426  1.5886
+ 0.1080  1.7850  0.8234 -1.0990  1.2204 -0.7800 -1.2480  0.0282 -1.6722 -1.2150  0.0062  0.8270 -2.0992 -1.1304 -1.7754  0.1336 -0.1070 -0.2604
+
+ 0.3216 -1.2610  0.2520  0.8954  1.1352  0.1394 -0.6512  0.4606 -1.4834 -0.1908

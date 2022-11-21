@@ -1,0 +1,81 @@
+input number 1 7
+output number 1 1
+hidden 10
+
+filename trainfacts NEWFOOD.fct
+filename testfacts NEWFOOD.tst
+filename runfacts NEWFOOD.in
+checkpoint 8 checkpt.net
+
+learnrate  1.0000 constant
+learnlayer  1.0000  1.0000
+smoothing  0.9000
+
+traintol  0.1000
+testtol  0.4000
+
+
+function hidden1 sigmoid  0.0000  1.0000  0.0000 1.0000
+function output sigmoid  0.0000  1.0000  0.0000 1.0000
+
+dictionary input Plastic Labor Sales Interest DOW Volume FoodStk
+
+dictionary output Stk+1
+
+
+display input number 5 1 7 1 1
+display output number 5 19 1 1
+display pattern number 6 19 1 1
+display color bold 5 19 1 10
+display string 4 1 Plastic           Stk+1
+display string 5 15 Out:
+display string 6 1 Labor         Ptn:
+display string 7 1
+display string 8 1 Sales
+display string 9 1
+display string 10 1 Interest
+display string 11 1
+display string 12 1 DOW
+display string 13 1
+display string 14 1 Volume
+display string 15 1
+display string 16 1 FoodStk
+scale input minimum
+24.000  21.100  9.0000  3.1000  2523.0  50.000  113.00
+scale input maximum
+26.600  27.500  9.8500  5.8000  2565.0  82.000  117.20
+scale output minimum
+113.40
+scale output maximum
+117.20
+
+statistics 3834 861 142
+stathistory 142
+0.3722  0.2550  0.1093  0.1085  0.0997  0.0978  0.0967  0.0955  0.0944  0.0933  0.0923  0.0914  0.0906  0.0902  0.0901  0.0896  0.0903  0.0894  0.0891  0.0891  0.0886  0.0883  0.0881  0.0880  0.0877  0.0876  0.0875  0.0872  0.0866  0.0867  0.0864  0.0865  0.0860  0.0859  0.0858  0.0849  0.0857  0.0840  0.0856  0.0841  0.0854  0.0831  0.0848  0.0857  0.0824  0.0839  0.0851  0.0820  0.0832  0.0846  0.0814  0.0825  0.0835  0.0811  0.0824  0.0821  0.0811  0.0822  0.0815  0.0810  0.0820  0.0811  0.0800  0.0810  0.0820  0.0796  0.0802  0.0810  0.0800  0.0793  0.0807  0.0800  0.0792  0.0792  0.0801  0.0794  0.0784  0.0798  0.0784  0.0777  0.0792  0.0787  0.0779  0.0774  0.0787  0.0773  0.0769  0.0769  0.0774  0.0773  0.0770  0.0768  0.0773  0.0766  0.0763  0.0769  0.0761  0.0760  0.0761  0.0763  0.0757  0.0760  0.0761  0.0758  0.0759  0.0758  0.0754  0.0755  0.0754  0.0754  0.0750  0.0750  0.0751  0.0749  0.0748  0.0748  0.0745  0.0745  0.0746  0.0740  0.0743  0.0742  0.0742  0.0737  0.0741  0.0738  0.0731  0.0745  0.0740  0.0728  0.0735  0.0737  0.0732  0.0726  0.0725  0.0735  0.0732  0.0729  0.0726  0.0722  0.0731  0.0729
+
+weights 3 1 7 10 1
+-0.5164  0.4354  1.5262  1.5040 -3.6554 -0.2166 -0.5914  0.5404
+-2.9484 -0.2390  3.4072 -4.5920 -0.3856 -0.5174  2.0676  1.5646
+-2.2840  0.9676 -0.1008  1.4300  0.3566 -1.1934  0.8864  1.7742
+ 0.6672 -2.0502 -1.1462 -0.6990 -0.9824 -0.1654 -1.8262 -3.3426
+-0.7980 -0.1302  0.6284 -0.3816  3.4906  0.9524 -2.2234  1.5354
+-0.2414  0.0042 -2.0780 -1.1634  0.1404 -0.3442  2.2182  4.7296
+-3.0406 -0.2544 -2.1104 -0.3632  1.3346  0.0926  0.0902 -1.2132
+-0.0850 -0.1974 -2.0334  0.0510 -1.9334 -1.3204 -0.6392  0.9990
+-2.3162  0.8940  0.3590  1.7424 -0.9226 -2.1254  3.6994 -5.2720
+ 1.6254  1.3634 -3.1132  1.1524 -2.2370  0.9596 -0.3876 -1.1240
+
+-2.2002  1.3484  1.3762  0.3646  1.4700 -2.2132 -1.8310 -1.2616 -0.9836 -0.7792  0.8686
+
+deltas
+aGaGaBaGaGaEaFaG
+AAACADABAFACAEaC
+ABABABAAAFACAEAA
+aBaCABaCAAACABaB
+ABACaBACADACABaB
+AAaCACaCABaBAAAC
+aDaCACaCABaBAAAC
+aBaBAAaFaBACaCAB
+aFaBaBAAaCaCaBaF
+aEaCaDaCaFaBaEaF
+ACAGAMaEAOAOaCaCAAAHAO

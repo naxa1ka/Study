@@ -1,0 +1,10 @@
+
+thresholds 1
+
+learnrate 1.0
+
+traintol 0.1
+
+testtol 0.4
+
+checkpoint 8 checkpt.net

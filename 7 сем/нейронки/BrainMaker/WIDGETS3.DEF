@@ -1,0 +1,43 @@
+input number 1 13
+dictionary input   Plastic  Sales  Interest  Dow  ABCStk  Paint  Overhead  WIDStk  WID-1  WID-3  WID-5  Dow-3  VolAvg
+
+output number 1 2
+dictionary output   StkChg  Validity
+
+hidden 13
+
+
+display input   thermom 5 1 10 2 1
+display output  thermom 5 29 2 1 2
+display pattern thermom 6 29 2 1 2
+display color bold 5 29 2 10 2
+display screen   4 16
+ Plastic   Sales             StkChg
+                         Out:
+ Interest  Dow           Ptn:
+                             Validity
+ ABCStk    Paint
+
+ Overhead  WIDStk
+
+ WID-1     WID-3
+
+ WID-5     Dow-3
+
+ VolAvg
+
+
+filename trainfacts WIDGETS3.fct
+
+filename testfacts WIDGETS3.tst
+
+ Plastic   Sales Interes     Dow  ABCStk   Paint Overhea  WIDStk   WID-1   WID-3   WID-5   Dow-3  VolAvg
+  StkChg Validit
+scale input minimum
+24      9.05    3.1     2524    100     90      1010    113.5   -1      -1      -1      -15     52.3333
+scale input maximum
+26.6    9.85    5.8     2562    140     96      1040    116.5   1.3     2.3     2.3     17      77.6666
+scale output minimum
+-1      -2.3
+scale output maximum
+2.3     1
